@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>热量计算器</title>
+ 
+ <link rel="stylesheet" href="style.css">
+ </head>
+<body>
+  <div class="Card">
+    <h1>热量计算器</h1>
+    <p>输入食物和克数，算算有多少热量</p>
+
+    <!-- 表单区：用户输入的地方 -->
+    <input id="foodName" type="text" placeholder="食物名称">
+    <input id="grams" type="number" placeholder="克数（比如200）">
+    <button onclick="calc()">计算热量</button>
+
+    <p id="result"></p>
+  </div>
+  <script src="script.js"></script>   <!-- JS 在这里被引入 -->
+</body>
+
+</html> 

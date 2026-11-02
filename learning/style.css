@@ -1,0 +1,51 @@
+   body {
+            background-color: #3b2a20;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;    
+            margin: 20px;
+        }
+        .Card {
+                background: #5c7943;
+                padding: 40px;
+                border-radius: 12px;
+                text-align: center;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+        h1 {
+            color: #FEF4EB;
+        }
+        h2{
+            color: #FEF4EB;
+        }
+        p {
+            color: #FEF4EB;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+       ul {
+          display: inline-block;   /* 新增①：让 ul 收缩成"刚好包住列表"的盒子 → 才能整体居中 */
+           text-align: left;        /* 新增②：让文字靠左，紧贴圆点 */
+          color: #FEF4EB;
+          font-size: 16px;
+          list-style-type: disc;
+        }
+        input {
+         display: block;              /* 独占一行（否则多个输入框会挤在一起） */
+         width: 100%;                 /* 占满卡片宽度 */
+         padding: 12px;               /* 内留白：文字不贴边，框变高 */
+         margin-bottom: 12px;         /* 和下面的元素隔开 */
+          border: 2px solid #dddddd;   /* 画矩形轮廓：2px 实线 浅灰 */
+         border-radius: 8px;          /* 圆角（第十二课学过） */
+         background-color: #ffffff;   /* 框内底色 */
+         font-size: 16px;             /* 字号（第十四课学过） */
+         box-sizing: border-box;      /* 让 padding 算进宽度里（上次手机溢出的坑） */
+        }
+        @media (max-width: 600px) {
+        .Card {
+        width: 100%;   /* 手机上卡片占满整行 */
+    }
+}

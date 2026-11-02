@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  你的第一个网页模板（双击这个文件即可在浏览器中打开！）
+
+  网页 = HTML(结构) + CSS(样式) + JavaScript(交互)
+  这个文件把三者放在一起，是最小的完整示例。
+  看懂它，你就迈出了第一步。
+  ============================================================
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <!-- 这行让页面在手机上也能正常显示（响应式的基础，很重要） -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的第一个网页</title>
+
+  <!-- ===== CSS：给网页化妆（写在 <style> 里） ===== -->
+  <style>
+    /* 页面整体：渐变背景 + 居中 */
+    body {
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+    /* 白色卡片 */
+    .card {
+      background: rgba(255, 255, 255, 0.96);
+      color: #333;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 22px;
+      line-height: 1.4;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    button {
+      background: #667eea;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background: #5568d8; }
+    #result {
+      margin-top: 16px;
+      font-weight: bold;
+      color: #667eea;
+      min-height: 24px;
+    }
+    .tip {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== HTML：网页的内容（写在 <body> 里） ===== -->
+  <div class="card">
+    <h1>🍚 我的第一个网页 —— 迷你热量计算器</h1>
+    <p>输入食物的克数，算一算有多少热量（以米饭为例：每 100 克约 116 千卡）。</p>
+
+    <!-- 输入框：用户在这里填数字 -->
+    <input id="grams" type="number" placeholder="请输入克数，比如 200" />
+
+    <!-- 按钮：点击后执行 JS 里的 calc() 函数 -->
+    <button onclick="calc()">计算热量</button>
+
+    <!-- 结果显示在这里 -->
+    <div id="result"></div>
+
+    <hr>
+    <p class="tip">
+      这是 HTML + CSS + JS 的最小示例。<br>
+      你学习的第一课，就从读懂这个文件开始：改改文字、改改颜色、加一个按钮试试。
+    </p>
+  </div>
+
+  <!-- ===== JavaScript：让网页"动起来"（写在 <script> 里） ===== -->
+  <script>
+    // 定义一个函数：点按钮时浏览器会调用它
+    function calc() {
+      // 1. 从输入框里取出用户填的数字（网页元素用 document.getElementById 获取）
+      var grams = document.getElementById('grams').value;
+
+      // 2. 简单校验：没填或填了非正数就提示
+      if (grams === '' || Number(grams) <= 0) {
+        document.getElementById('result').innerText = '请先输入一个大于 0 的克数';
+        return; // 提前结束函数
+      }
+
+      // 3. 计算：每 100 克米饭约 116 千卡
+      var calories = Number(grams) / 100 * 116;
+
+      // 4. 把结果写到页面上（toFixed(1) 保留 1 位小数）
+      document.getElementById('result').innerText =
+        grams + ' 克米饭 ≈ ' + calories.toFixed(1) + ' 千卡';
+    }
+  </script>
+</body>
+</html>
