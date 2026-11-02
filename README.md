@@ -4,7 +4,9 @@ AI 时代的全栈学习记录：**学习笔记 + 练习代码 + 第一个网页
 
 ## 🌐 网页
 
-首页就是根目录的 `index.html`（开启 GitHub Pages 后可通过网址访问）。
+**在线地址**：https://slient-reverie.github.io/dontwannaknow/
+
+首页是根目录的 `index.html`，由 GitHub Pages 托管。
 
 ## 📚 学习笔记（`learning/`）
 
